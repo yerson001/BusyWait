@@ -27,27 +27,28 @@ main()
         exit(1);
     }
 
-    for (s = shm; *s != NULL; s++){
-            ss=s;
-        //putchar(*s);
-        printf("Start p2 Program...\n");
-    }
+    while (*shm != '*'){
+        printf("proceso 2\n");
+        for(s = shm; *s!=NULL; s++)
+        {
+            ss = s; putchar(*s);printf(" -> Into shared memory\n");
+        }
         
-    //putchar('\n');
-
-    //printf("num: %i\n",*ss-'0'+2);
-    num = *ss-'0';
-    if(num%2==0){
-        printf("The number is EVEN: %i\n",num);
-        *shm = '*';
-        execvp(args[0],args); 
+        num = *ss-'0';//numero entero
+        if (num%2==0)
+        {
+            printf("The number is EVEN: %i\n",num);
+            printf("KILL proces P1\n");
+            *shm = '*';
+            execvp(args[0],args);
+        }
+        else
+        {
+            execvp(args[1],args);
+            *shm = '*';
+        }
+        //sleep(1);
     }
-    else{
-        execvp(args[1],args); 
-    }
     
-    
-    
-
     exit(0);
 }

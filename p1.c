@@ -38,17 +38,17 @@ main()
     //for (c = 'a'; c <= 'z'; c++)
     //    *s++ = c;
     //*s = 's';
-    num = rand() % 10;
+    num = rand() % (10);
     n = IntChar(num);
     *s++ = n;
     *s = NULL;
 
     while (*shm != '*'){
-        printf("Wait client Num: %i Cont : %i\n",num,cont++);
+        printf("Valor Actual en el Shared Memory: %i Cont : %i\n",num,cont++);
+        for(s = shm; *s!=NULL; s++){ putchar(*s);printf("\n"); }
         sleep(1);
     }
         
-
     exit(0);
 }
 

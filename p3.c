@@ -26,21 +26,24 @@ main()
         perror("shmat");
         exit(1);
     }
+    while (*shm != '*')
+    {
+        printf("proceso 2\n");
+        for(s = shm; *s!=NULL; s++)
+        {
+            ss = s; putchar(*s);printf(" -> Into shared memory\n");
+        }
 
-    for (s = shm; *s != NULL; s++){
-            ss=s;
-        //putchar(*s);
-        printf("Star p3 program...\n");
+    
+        num = *ss-'0';
+        if(num%2==1)
+        {
+            printf("The number is ODD: %i\n",num);
+            printf("KILL proces P1\n");
+            *shm = '*';
+            execvp(args[0],args); 
+        }
     }
-        
-    //putchar('\n');
 
-    //printf("num: %i\n",*ss-'0'+2);
-    num = *ss-'0';
-    if(num%2==1){
-        printf("The number is ODD: %i\n",num);
-        *shm = '*';
-        execvp(args[0],args); 
-    }
     exit(0);
 }
