@@ -9,6 +9,14 @@
 
 #define SHMSZ     27
 
+/*****************************************************************
+ * Para ver la ejecucion del programa  
+ * lo puede ver en el siguiente repositorio
+ * REPO: https://github.com/yerson001/BusyWait/blob/main/README.md
+ *****************************************************************
+ */
+
+
 char IntChar(int numero){
     return numero + '0';
 }

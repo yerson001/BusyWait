@@ -28,7 +28,7 @@ main()
     }
     while (*shm != '*')
     {
-        printf("proceso 2\n");
+        printf("proceso 3\n");
         for(s = shm; *s!=NULL; s++)
         {
             ss = s; putchar(*s);printf(" -> Value Into SHM\n");
