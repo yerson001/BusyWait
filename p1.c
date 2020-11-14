@@ -44,9 +44,16 @@ main()
     *s = NULL;
 
     while (*shm != '*'){
-        printf("Valor Actual en el Shared Memory: %i Cont : %i\n",num,cont++);
-        for(s = shm; *s!=NULL; s++){ putchar(*s);printf("\n"); }
-        sleep(1);
+        //printf("Valor Actual en el Shared Memory: %i Cont : %i\n",num,cont++);
+        printf("%i ",cont++);
+        printf(" * Value SHM [ ");
+        for(s = shm; *s!=NULL; s++)
+        {
+            putchar(*s);
+        }
+
+        printf(" ] * \n");
+        sleep(4);
     }
         
     exit(0);

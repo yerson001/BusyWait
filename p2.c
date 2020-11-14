@@ -31,7 +31,7 @@ main()
         printf("proceso 2\n");
         for(s = shm; *s!=NULL; s++)
         {
-            ss = s; putchar(*s);printf(" -> Into shared memory\n");
+            ss = s; putchar(*s);printf(" -> Value Into SHM \n");
         }
         
         num = *ss-'0';//numero entero
